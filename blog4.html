@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Why Has U.S. Housing Become Less Affordable?</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a class="brand" href="index.html">Yixin Yang</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="blog4.html">Blog 4</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="blog-header">
+    <div class="eyebrow">Computational Methods for Economists · Blog Post 4</div>
+    <h1>Why Has U.S. Housing Become Less Affordable?</h1>
+    <p class="subtitle">Home Prices, Household Income, and Mortgage Rates, 2000–2025</p>
+    <div class="meta">Yixin Yang · October 6, 2026 · Dataset of Choice · United States</div>
+  </div>
+
+  <article>
+    <p>
+      Housing affordability is not determined by the price of a home alone. It also
+      depends on how quickly household incomes grow and how expensive it is to finance
+      a purchase. This post asks: <strong>How has housing affordability changed in the
+      United States since 2000?</strong> Using annual data from the Federal Reserve
+      Bank of St. Louis (FRED), I compare new-home prices, real median household
+      income, and 30-year mortgage rates from 2000 through 2025.
+    </p>
+
+    <h2>Prices have risen faster than incomes</h2>
+
+    <figure>
+      <img src="images/figure1.png" alt="Line chart comparing real new-home prices and real median household income, indexed to 2000 equals 100.">
+      <figcaption>
+        Figure 1. Real new-home prices have outpaced real median household income.
+        Source: FRED, series MSPUS and MEHOINUSA672N.
+      </figcaption>
+    </figure>
+
+    <p>
+      The first figure shows a clear long-run gap. With 2000 set equal to 100, the
+      real new-home price index reaches about 133 by 2025, while the real median
+      household income index reaches about 119. In other words, new-home prices grew
+      roughly 33 percent in real terms, compared with about 19 percent for real median
+      household income. The pattern is not smooth: prices fell during the housing
+      correction around the late 2000s and then rose strongly in the following years.
+      Nevertheless, by 2025 the price index remains well above the income index.
+    </p>
+
+    <h2>Housing became more expensive relative to income</h2>
+
+    <figure>
+      <img src="images/figure2.png" alt="Line chart of the real median new-home price relative to real median household income from 2000 to 2025.">
+      <figcaption>
+        Figure 2. The real median new-home price relative to real median household
+        income. Source: FRED, series MSPUS, MEHOINUSA672N, and CPIAUCSL.
+      </figcaption>
+    </figure>
+
+    <p>
+      The price-to-income ratio makes the affordability story more direct. In 2000,
+      the real median new-home price was about 4.26 times real median household
+      income. By 2025, the ratio was about 4.75. The ratio also reached much higher
+      levels during several periods, including the early 2000s and around 2022.
+      This means that the long-run increase in home prices cannot be understood simply
+      as general inflation: relative to household income, a new home became more
+      expensive.
+    </p>
+
+    <h2>Mortgage rates can amplify the burden</h2>
+
+    <figure>
+      <img src="images/figure3.png" alt="Line chart showing an illustrative annual mortgage payment as a share of median household income from 2000 to 2025.">
+      <figcaption>
+        Figure 3. Illustrative mortgage payment burden. Assumes a 20 percent down
+        payment and a 30-year fixed-rate mortgage; excludes taxes, insurance, and
+        maintenance. Source: FRED.
+      </figcaption>
+    </figure>
+
+    <p>
+      The final figure adds the financing side of affordability. I calculate an
+      illustrative annual mortgage payment using an 80 percent loan-to-value ratio
+      and compare it with real median household income. The estimated burden was
+      relatively low around 2020, when mortgage rates were unusually low, but rose
+      sharply as rates increased after 2021. By 2025, the illustrative payment was
+      still around 29 percent of median household income. This highlights an important
+      point: the cost of buying a home depends on both the price of the home and the
+      cost of borrowing.
+    </p>
+
+    <div class="note">
+      <strong>Takeaway.</strong> Since 2000, U.S. housing affordability has generally
+      deteriorated: new-home prices have grown faster than real median household
+      income, and mortgage rates can further increase the financing burden. The
+      deterioration has not been continuous, however. Affordability improved during
+      the post-2008 correction and the low-rate period around 2020 before worsening
+      again.
+    </div>
+
+    <h2>Data and limitations</h2>
+
+    <p>
+      The analysis combines four FRED series: median sales price of new houses sold
+      (<code>MSPUS</code>), real median household income
+      (<code>MEHOINUSA672N</code>), the 30-year fixed mortgage rate
+      (<code>MORTGAGE30US</code>), and CPI (<code>CPIAUCSL</code>). Higher-frequency
+      series are converted to annual averages, and nominal new-home prices are
+      converted to 2025 dollars using the annual-average CPI.
+    </p>
+
+    <p>
+      There are several limitations. First, <code>MSPUS</code> measures new-home
+      sales, not the entire U.S. housing market. Second, the mortgage burden is an
+      illustrative calculation rather than observed household spending and excludes
+      taxes, insurance, and maintenance. Finally, the analysis is descriptive: it
+      shows how affordability changed, but it does not identify the causal reasons
+      for those changes.
+    </p>
+
+    <p class="meta">
+      Reproducibility: the R script used to download and transform the FRED data is
+      included in the project repository.
+    </p>
+  </article>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    Computational Methods for Economists · Blog Post 4
+  </div>
+</footer>
+</body>
+</html>
